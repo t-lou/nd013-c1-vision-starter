@@ -6,7 +6,7 @@ import shutil
 base = os.path.dirname(os.path.realpath(__file__))
 dir_in = os.path.join(base, 'processed')
 
-def move(fns: list, target: str, num: int) -> list:
+def copy(fns: list, target: str, num: int) -> list:
     '''Copy some files to the target directory, then return the name of the rest.
     Params:
         fns: the candidate files
@@ -32,9 +32,9 @@ fns = os.listdir(dir_in)
 random.shuffle(fns)
 
 # copy
-fns = move(fns, os.path.join(base, 'test'), 10)
-fns = move(fns, os.path.join(base, 'train'), int(0.7 * len(fns)))
-fns = move(fns, os.path.join(base, 'val'), -1)
+fns = copy(fns, os.path.join(base, 'test'), 10)
+fns = copy(fns, os.path.join(base, 'train'), int(0.7 * len(fns)))
+fns = copy(fns, os.path.join(base, 'val'), -1)
 
 # assure all files are used
 assert fns is None
