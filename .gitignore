@@ -1,2 +1,10 @@
 *__pycache__
 *.ipynb_checkpoints/
+.gitcredentials
+data/processed/
+data/test/
+data/train/
+data/val/
+data_raw/
+experiments/pretrained_model/
+experiments/reference/
