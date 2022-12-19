@@ -143,32 +143,14 @@ train_config {
       overlap_thresh: 0.0
     }
   }
-  data_augmentation_options {
-    random_image_scale {
-      min_scale_ratio: 0.75
-      max_scale_ratio: 1.25
-    }
-  }
-  data_augmentation_options {
-    random_crop_image {
-      min_area: 0.8
-      max_area: 1.0
-    }
-  }
-  data_augmentation_options {
-    random_black_patches {
-      max_black_patches: 2
-      probability: 0.2
-    }
-  }
   sync_replicas: true
   optimizer {
     momentum_optimizer {
       learning_rate {
         cosine_decay_learning_rate {
-          learning_rate_base: 0.015
+          learning_rate_base: 0.03999999910593033
           total_steps: 25000
-          warmup_learning_rate: 0.01
+          warmup_learning_rate: 0.013333000242710114
           warmup_steps: 2000
         }
       }
