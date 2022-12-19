@@ -1,7 +1,7 @@
 #! /bin/bash
 
-DIR_IN="/app/project/data/test"
-DIR_OUT="/app/project/gifs"
+DIR_IN="./data/test"
+DIR_OUT="./gifs"
 
 rm -rf ${DIR_OUT}
 mkdir -p ${DIR_OUT}
