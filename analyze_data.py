@@ -35,7 +35,7 @@ def analyze(fn, dir_out):
     FREQ_OBJECTS = {k: [0] * MAX_IDX for k in NAMES.keys()}
     dataset = utils.get_dataset(fn)
     c = 0
-    for data in dataset.shuffle(10):
+    for data in dataset.shuffle(10).take(6):
         count_batch = get_counts(data)
         update(count_batch)
         c += 1
@@ -55,7 +55,8 @@ def analyze(fn, dir_out):
     fn_out = os.path.join(dir_out, os.path.basename(fn) + '.png')
     print(fn_out)
     matplotlib.pyplot.savefig(fn_out)
-    matplotlib.pyplot.clf()
+    matplotlib.pyplot.show()
+    # matplotlib.pyplot.clf()
 
 
 def analyze_set(dir_in, dir_out):
